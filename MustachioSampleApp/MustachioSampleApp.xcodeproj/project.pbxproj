@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD1E8F9A19B36C0E00D6B695 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1E8F9919B36C0E00D6B695 /* AppDelegate.swift */; };
+		AD1E8F9C19B36C0E00D6B695 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1E8F9B19B36C0E00D6B695 /* ViewController.swift */; };
+		AD1E8F9F19B36C0E00D6B695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1E8F9D19B36C0E00D6B695 /* Main.storyboard */; };
+		AD1E8FA119B36C0E00D6B695 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD1E8FA019B36C0E00D6B695 /* Images.xcassets */; };
+		AD1E8FAD19B36C0E00D6B695 /* MustachioSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1E8FAC19B36C0E00D6B695 /* MustachioSampleAppTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD1E8FA719B36C0E00D6B695 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD1E8F8C19B36C0E00D6B695 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD1E8F9319B36C0E00D6B695;
+			remoteInfo = MustachioSampleApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AD1E8F9419B36C0E00D6B695 /* MustachioSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MustachioSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD1E8F9819B36C0E00D6B695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD1E8F9919B36C0E00D6B695 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AD1E8F9B19B36C0E00D6B695 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AD1E8F9E19B36C0E00D6B695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AD1E8FA019B36C0E00D6B695 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AD1E8FA619B36C0E00D6B695 /* MustachioSampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MustachioSampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD1E8FAB19B36C0E00D6B695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD1E8FAC19B36C0E00D6B695 /* MustachioSampleAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MustachioSampleAppTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD1E8F9119B36C0E00D6B695 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD1E8FA319B36C0E00D6B695 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD1E8F8B19B36C0E00D6B695 = {
+			isa = PBXGroup;
+			children = (
+				AD1E8F9619B36C0E00D6B695 /* MustachioSampleApp */,
+				AD1E8FA919B36C0E00D6B695 /* MustachioSampleAppTests */,
+				AD1E8F9519B36C0E00D6B695 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AD1E8F9519B36C0E00D6B695 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD1E8F9419B36C0E00D6B695 /* MustachioSampleApp.app */,
+				AD1E8FA619B36C0E00D6B695 /* MustachioSampleAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD1E8F9619B36C0E00D6B695 /* MustachioSampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				AD1E8F9919B36C0E00D6B695 /* AppDelegate.swift */,
+				AD1E8F9B19B36C0E00D6B695 /* ViewController.swift */,
+				AD1E8F9D19B36C0E00D6B695 /* Main.storyboard */,
+				AD1E8FA019B36C0E00D6B695 /* Images.xcassets */,
+				AD1E8F9719B36C0E00D6B695 /* Supporting Files */,
+			);
+			path = MustachioSampleApp;
+			sourceTree = "<group>";
+		};
+		AD1E8F9719B36C0E00D6B695 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AD1E8F9819B36C0E00D6B695 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD1E8FA919B36C0E00D6B695 /* MustachioSampleAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD1E8FAC19B36C0E00D6B695 /* MustachioSampleAppTests.swift */,
+				AD1E8FAA19B36C0E00D6B695 /* Supporting Files */,
+			);
+			path = MustachioSampleAppTests;
+			sourceTree = "<group>";
+		};
+		AD1E8FAA19B36C0E00D6B695 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AD1E8FAB19B36C0E00D6B695 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD1E8F9319B36C0E00D6B695 /* MustachioSampleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD1E8FB019B36C0E00D6B695 /* Build configuration list for PBXNativeTarget "MustachioSampleApp" */;
+			buildPhases = (
+				AD1E8F9019B36C0E00D6B695 /* Sources */,
+				AD1E8F9119B36C0E00D6B695 /* Frameworks */,
+				AD1E8F9219B36C0E00D6B695 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MustachioSampleApp;
+			productName = MustachioSampleApp;
+			productReference = AD1E8F9419B36C0E00D6B695 /* MustachioSampleApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AD1E8FA519B36C0E00D6B695 /* MustachioSampleAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD1E8FB319B36C0E00D6B695 /* Build configuration list for PBXNativeTarget "MustachioSampleAppTests" */;
+			buildPhases = (
+				AD1E8FA219B36C0E00D6B695 /* Sources */,
+				AD1E8FA319B36C0E00D6B695 /* Frameworks */,
+				AD1E8FA419B36C0E00D6B695 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD1E8FA819B36C0E00D6B695 /* PBXTargetDependency */,
+			);
+			name = MustachioSampleAppTests;
+			productName = MustachioSampleAppTests;
+			productReference = AD1E8FA619B36C0E00D6B695 /* MustachioSampleAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD1E8F8C19B36C0E00D6B695 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = jmont;
+				TargetAttributes = {
+					AD1E8F9319B36C0E00D6B695 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					AD1E8FA519B36C0E00D6B695 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = AD1E8F9319B36C0E00D6B695;
+					};
+				};
+			};
+			buildConfigurationList = AD1E8F8F19B36C0E00D6B695 /* Build configuration list for PBXProject "MustachioSampleApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD1E8F8B19B36C0E00D6B695;
+			productRefGroup = AD1E8F9519B36C0E00D6B695 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD1E8F9319B36C0E00D6B695 /* MustachioSampleApp */,
+				AD1E8FA519B36C0E00D6B695 /* MustachioSampleAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD1E8F9219B36C0E00D6B695 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD1E8F9F19B36C0E00D6B695 /* Main.storyboard in Resources */,
+				AD1E8FA119B36C0E00D6B695 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD1E8FA419B36C0E00D6B695 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD1E8F9019B36C0E00D6B695 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD1E8F9C19B36C0E00D6B695 /* ViewController.swift in Sources */,
+				AD1E8F9A19B36C0E00D6B695 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD1E8FA219B36C0E00D6B695 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD1E8FAD19B36C0E00D6B695 /* MustachioSampleAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD1E8FA819B36C0E00D6B695 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD1E8F9319B36C0E00D6B695 /* MustachioSampleApp */;
+			targetProxy = AD1E8FA719B36C0E00D6B695 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AD1E8F9D19B36C0E00D6B695 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD1E8F9E19B36C0E00D6B695 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AD1E8FAE19B36C0E00D6B695 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD1E8FAF19B36C0E00D6B695 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD1E8FB119B36C0E00D6B695 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = MustachioSampleApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AD1E8FB219B36C0E00D6B695 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = MustachioSampleApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AD1E8FB419B36C0E00D6B695 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MustachioSampleAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MustachioSampleApp.app/MustachioSampleApp";
+			};
+			name = Debug;
+		};
+		AD1E8FB519B36C0E00D6B695 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MustachioSampleAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MustachioSampleApp.app/MustachioSampleApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD1E8F8F19B36C0E00D6B695 /* Build configuration list for PBXProject "MustachioSampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD1E8FAE19B36C0E00D6B695 /* Debug */,
+				AD1E8FAF19B36C0E00D6B695 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD1E8FB019B36C0E00D6B695 /* Build configuration list for PBXNativeTarget "MustachioSampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD1E8FB119B36C0E00D6B695 /* Debug */,
+				AD1E8FB219B36C0E00D6B695 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AD1E8FB319B36C0E00D6B695 /* Build configuration list for PBXNativeTarget "MustachioSampleAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD1E8FB419B36C0E00D6B695 /* Debug */,
+				AD1E8FB519B36C0E00D6B695 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD1E8F8C19B36C0E00D6B695 /* Project object */;
+}
