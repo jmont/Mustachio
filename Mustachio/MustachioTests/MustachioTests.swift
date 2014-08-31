@@ -26,4 +26,19 @@ class MustachioTests: XCTestCase {
         var result = Mustache.render("{{name}}", context: ["name" : ContextType.Str("JC")])
         XCTAssertEqual(result, "JC")
     }
+
+    func testVariableWithHTML() {
+        var result = Mustache.render("{{name}}", context: ["name" : ContextType.Str("<b>JC</b>")])
+        XCTAssertEqual(result, "&lt;b&gt;JC&lt;/b&gt;")
+    }
+
+    func testUnescapedVariableWithNoHTML() {
+        var result = Mustache.render("{{{name}}}", context: ["name" : ContextType.Str("JC")])
+        XCTAssertEqual(result, "JC")
+    }
+
+    func testUnescapedVariableWithHTML() {
+        var result = Mustache.render("{{{name}}}", context: ["name" : ContextType.Str("<b>JC</b>")])
+        XCTAssertEqual(result, "<b>JC</b>")
+    }
 }
