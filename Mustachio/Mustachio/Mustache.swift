@@ -57,7 +57,7 @@ public class Mustache {
 
     class func toTag(s: String) -> Tag {
         var maybeTag: Tag?
-        if s.hasPrefix("{{{") {
+        if s.hasPrefix("{{{") || s.hasPrefix("{{&") {
             maybeTag = self.mkTagUnescapedVariable(s)
         } else if s.hasPrefix("{{#") {
             maybeTag = .Section("", "")
@@ -76,17 +76,30 @@ public class Mustache {
         }
 
         var name = Array(s).dropWhile({(char: Character) -> Bool in char == "{" }).takeWhile({(char: Character) -> Bool in char != "}" })
-        return .Variable(String(seq: name))
+        return .Variable(String(seq: name).trimWhitespace())
     }
 
     class func mkTagUnescapedVariable(s: String) -> Tag? {
         let prefix = "{{{"
         let suffix = "}}}"
         if !s.hasPrefix(prefix) || !s.hasSuffix(suffix) {
+            // Try the alternate version (`{{& name }}`)
+            return self.mkTagAlternateUnescapedVariable(s)
+        }
+
+        var nameArray = Array(s).dropWhile({(char: Character) -> Bool in char == "{" }).takeWhile({(char: Character) -> Bool in char != "}" })
+        var name = String(seq: nameArray).trimWhitespace()
+        return .UnescapedVariable(name)
+    }
+
+    class func mkTagAlternateUnescapedVariable(s: String) -> Tag? {
+        let prefix = "{{&"
+        let suffix = "}}"
+        if !s.hasPrefix(prefix) || !s.hasSuffix(suffix) {
             return nil
         }
 
-        var name = Array(s).dropWhile({(char: Character) -> Bool in char == "{" }).takeWhile({(char: Character) -> Bool in char != "}" })
-        return .UnescapedVariable(String(seq: name))
+        var name = Array(s).dropWhile({(char: Character) -> Bool in char == "{" || char == "&" }).takeWhile({(char: Character) -> Bool in char != "}" })
+        return .UnescapedVariable(String(seq: name).trimWhitespace())
     }
 }
