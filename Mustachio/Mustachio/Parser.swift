@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Parser {
-    class func parse(template: String) -> [Tag] {
-        return []
+public class Parser {
+    public class func parse(template: String) -> [Tag] {
+        return self.toTags(template)
     }
 
     class func toTags(template: String) -> [Tag] {
