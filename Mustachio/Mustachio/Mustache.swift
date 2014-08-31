@@ -10,7 +10,7 @@ import Foundation
 
 public class Mustache {
     public class func render(template: String, context: [String : ContextType]) -> String {
-        var tags: [Tag] = Parser.toTags(template)
+        var tags: [Tag] = Parser.parse(template)
         var rendered = tags.map(self.renderTag(context))
 
         return rendered.combine(" ")
