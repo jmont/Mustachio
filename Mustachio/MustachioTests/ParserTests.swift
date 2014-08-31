@@ -6,4 +6,24 @@
 //  Copyright (c) 2014 jmont. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import XCTest
+import Mustachio
+
+class ParserTests: XCTestCase {
+
+    override func setUp() {
+        super.setUp()
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
+
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+    }
+
+    func testVariableParser() {
+        var result = Parser.parse("{{name}}")
+        XCTAssertEqual(result, [Tag.Variable("name")])
+    }
+}
