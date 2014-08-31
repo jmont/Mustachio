@@ -26,6 +26,14 @@ extension String {
         result = result.stringByReplacingOccurrencesOfString(">", withString: "&gt;", options: nil, range: nil)
         return result
     }
+
+    func trimWhitespace() -> String {
+        var f = {(c: Character) -> Bool in c == " "};
+        var front = Array(self).dropWhile(f)
+        var back = front.reverse().dropWhile(f).reverse()
+
+        return String(seq: back)
+    }
 }
 
 extension Array {
