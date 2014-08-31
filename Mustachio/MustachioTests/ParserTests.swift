@@ -26,4 +26,14 @@ class ParserTests: XCTestCase {
         var result = Parser.parse("{{name}}")
         XCTAssertEqual(result, [Tag.Variable("name")])
     }
+
+    func testStringParser() {
+        var result = Parser.parse("Hello")
+        XCTAssertEqual(result, [Tag.Str("Hello")])
+    }
+
+    func testMultiplesParser() {
+        var result = Parser.parse("Hello {{name}}")
+        XCTAssertEqual(result, [Tag.Str("Hello"), Tag.Variable("name")])
+    }
 }
