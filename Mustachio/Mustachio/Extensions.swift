@@ -16,6 +16,16 @@ extension String {
     func length() -> Int {
         return Array(self).count
     }
+
+    // From: https://github.com/Halotis/EscapeHTML/blob/master/EscapeHTML/EscapeHTML.swift
+    func escapeHTML() -> String{
+        var result = self.stringByReplacingOccurrencesOfString("&", withString: "&amp;", options: nil, range: nil)
+        result = result.stringByReplacingOccurrencesOfString("\"", withString: "&quot;", options: nil, range: nil)
+        result = result.stringByReplacingOccurrencesOfString("'", withString: "&#39;", options: nil, range: nil)
+        result = result.stringByReplacingOccurrencesOfString("<", withString: "&lt;", options: nil, range: nil)
+        result = result.stringByReplacingOccurrencesOfString(">", withString: "&gt;", options: nil, range: nil)
+        return result
+    }
 }
 
 extension Array {
