@@ -6,12 +6,34 @@
 //  Copyright (c) 2014 jmont. All rights reserved.
 //
 
-enum Tag {
+public enum Tag : Equatable {
     case Str (String)
     case Variable (String)
     case UnescapedVariable (String)
     case Section (String, String)
     case InvertedSection (String, String)
+}
+
+public func == (lhs: Tag, rhs: Tag) -> Bool {
+    switch (lhs, rhs) {
+    case (.Str (let s1), .Str (let s2)):
+        return s1 == s2
+
+    case (.Variable (let v1), .Variable (let v2)):
+        return v1 == v2
+
+    case (.UnescapedVariable (let u1), .UnescapedVariable (let u2)):
+        return u1 == u2
+
+    case (.Section (let s1, let c1), .Section (let s2, let c2)):
+        return s1 == s2 && c1 == c2
+
+    case (.InvertedSection (let s1, let c1), .InvertedSection (let s2, let c2)):
+        return s1 == s2 && c1 == c2
+
+    default:
+        return false
+    }
 }
 
 public enum ContextType {
