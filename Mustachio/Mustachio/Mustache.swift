@@ -22,27 +22,32 @@ public class Mustache {
             return sname
 
         case .Variable(let vname):
-            var type = context[vname]
-            if type == nil {
-                return "NIL TYPE"
-            }
-
-            var result: String
-            switch type! {
-            case .Str(let s):
-                result = s
-            default:
-                result = "unsupported"
-            }
-            return result
-
+            return renderVariable(vname, context: context).escapeHTML()
         case .UnescapedVariable(let uname):
-            return "unsupported"
+            return renderVariable(uname, context: context)
         case .Section(let sname, let contents):
             return "unsupported"
         case .InvertedSection(let iname, let contents):
             return "unsupported"
         }
+    }
+
+    class func renderVariable(name: String, context: [String : ContextType]) -> String {
+        var type = context[name]
+        if type == nil {
+            return ""
+        }
+
+        var result: String
+        switch type! {
+        case .Str(let s):
+            result = s
+        default:
+            println("%@ - Unexpected type - Should not happen")
+            result = ""
+        }
+        return result
+
     }
 
     class func toTags(template: String) -> [Tag] {
@@ -53,7 +58,7 @@ public class Mustache {
     class func toTag(s: String) -> Tag {
         var maybeTag: Tag?
         if s.hasPrefix("{{{") {
-            maybeTag = .UnescapedVariable("")
+            maybeTag = self.mkTagUnescapedVariable(s)
         } else if s.hasPrefix("{{#") {
             maybeTag = .Section("", "")
         } else if s.hasPrefix("{{^") {
@@ -72,5 +77,16 @@ public class Mustache {
 
         var name = Array(s).dropWhile({(char: Character) -> Bool in char == "{" }).takeWhile({(char: Character) -> Bool in char != "}" })
         return .Variable(String(seq: name))
+    }
+
+    class func mkTagUnescapedVariable(s: String) -> Tag? {
+        let prefix = "{{{"
+        let suffix = "}}}"
+        if !s.hasPrefix(prefix) || !s.hasSuffix(suffix) {
+            return nil
+        }
+
+        var name = Array(s).dropWhile({(char: Character) -> Bool in char == "{" }).takeWhile({(char: Character) -> Bool in char != "}" })
+        return .UnescapedVariable(String(seq: name))
     }
 }
