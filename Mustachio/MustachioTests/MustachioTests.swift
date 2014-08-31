@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+import Mustachio
 
 class MustachioTests: XCTestCase {
     
@@ -21,16 +22,8 @@ class MustachioTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testVariable() {
+        var result = Mustache.render("{{name}}", context: ["name" : ContextType.Str("JC")])
+        XCTAssertEqual(result, "JC")
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
