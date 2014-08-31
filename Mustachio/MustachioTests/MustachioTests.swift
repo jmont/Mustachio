@@ -52,6 +52,11 @@ class MustachioTests: XCTestCase {
         XCTAssertEqual(result, "<b>JC</b>")
     }
 
+    func testMiss() {
+        var result = Mustache.render("{{{nope}}}", context: ["name" : ContextType.Str("<b>JC</b>")])
+        XCTAssertEqual(result, "")
+    }
+
 //    func testWhitespaceInNames() {
 //        var result = Mustache.render("Hello {{    name   }}", context: ["name" : ContextType.Str("JC")])
 //        XCTAssertEqual(result, "Hello JC")
