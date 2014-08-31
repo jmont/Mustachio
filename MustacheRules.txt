@@ -1,0 +1,18 @@
+
+
+## Tags
+
+(defined by `{{ }}`)
+
+### Variables
+
+- i.e. `{{name}}`
+- HTML escaped by default
+- Use `{{{name}}}` to unescape a variable
+- Use `&` to unescape a variable. i.e. `{{& name}}`
+- A variable miss returns an empty string
+
+### Sections
+
+- Begin with `#` end with `/`.
+- i.e. `{{#person}} ... {{/person}}`
