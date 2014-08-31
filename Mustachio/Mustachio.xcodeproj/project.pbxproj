@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD0164EE19B3B11700C90E5D /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0164ED19B3B11700C90E5D /* Parser.swift */; };
+		AD0164F019B3B22500C90E5D /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0164EF19B3B22500C90E5D /* ParserTests.swift */; };
 		AD1E8F7819B36BDE00D6B695 /* Mustachio.h in Headers */ = {isa = PBXBuildFile; fileRef = AD1E8F7719B36BDE00D6B695 /* Mustachio.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD1E8F8219B36BDE00D6B695 /* MustachioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1E8F8119B36BDE00D6B695 /* MustachioTests.swift */; };
 		AD1E8FB919B3724200D6B695 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1E8FB819B3724200D6B695 /* Types.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		AD0164ED19B3B11700C90E5D /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		AD0164EF19B3B22500C90E5D /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
 		AD1E8F7219B36BDE00D6B695 /* Mustachio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mustachio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1E8F7619B36BDE00D6B695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD1E8F7719B36BDE00D6B695 /* Mustachio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mustachio.h; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				AD1E8F8119B36BDE00D6B695 /* MustachioTests.swift */,
+				AD0164EF19B3B22500C90E5D /* ParserTests.swift */,
 				AD1E8FBE19B3926600D6B695 /* ArrayExtensionsTests.swift */,
 				AD1E8F7F19B36BDE00D6B695 /* Supporting Files */,
 			);
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD0164F019B3B22500C90E5D /* ParserTests.swift in Sources */,
 				AD1E8F8219B36BDE00D6B695 /* MustachioTests.swift in Sources */,
 				AD1E8FC019B392AE00D6B695 /* Extensions.swift in Sources */,
 				AD1E8FBF19B3926600D6B695 /* ArrayExtensionsTests.swift in Sources */,
