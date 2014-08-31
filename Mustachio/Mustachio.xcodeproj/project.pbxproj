@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		AD1E8F7819B36BDE00D6B695 /* Mustachio.h in Headers */ = {isa = PBXBuildFile; fileRef = AD1E8F7719B36BDE00D6B695 /* Mustachio.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD1E8F8219B36BDE00D6B695 /* MustachioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1E8F8119B36BDE00D6B695 /* MustachioTests.swift */; };
+		AD1E8FB919B3724200D6B695 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1E8FB819B3724200D6B695 /* Types.swift */; };
+		AD1E8FBB19B3736D00D6B695 /* Mustache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1E8FBA19B3736D00D6B695 /* Mustache.swift */; };
+		AD1E8FBD19B3842800D6B695 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1E8FBC19B3842800D6B695 /* Extensions.swift */; };
+		AD1E8FBF19B3926600D6B695 /* ArrayExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1E8FBE19B3926600D6B695 /* ArrayExtensionsTests.swift */; };
+		AD1E8FC019B392AE00D6B695 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1E8FBC19B3842800D6B695 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +23,10 @@
 		AD1E8F7D19B36BDE00D6B695 /* MustachioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MustachioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1E8F8019B36BDE00D6B695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD1E8F8119B36BDE00D6B695 /* MustachioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MustachioTests.swift; sourceTree = "<group>"; };
+		AD1E8FB819B3724200D6B695 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		AD1E8FBA19B3736D00D6B695 /* Mustache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mustache.swift; sourceTree = "<group>"; };
+		AD1E8FBC19B3842800D6B695 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AD1E8FBE19B3926600D6B695 /* ArrayExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +69,9 @@
 			isa = PBXGroup;
 			children = (
 				AD1E8F7719B36BDE00D6B695 /* Mustachio.h */,
+				AD1E8FB819B3724200D6B695 /* Types.swift */,
+				AD1E8FBA19B3736D00D6B695 /* Mustache.swift */,
+				AD1E8FBC19B3842800D6B695 /* Extensions.swift */,
 				AD1E8F7519B36BDE00D6B695 /* Supporting Files */,
 			);
 			path = Mustachio;
@@ -77,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				AD1E8F8119B36BDE00D6B695 /* MustachioTests.swift */,
+				AD1E8FBE19B3926600D6B695 /* ArrayExtensionsTests.swift */,
 				AD1E8F7F19B36BDE00D6B695 /* Supporting Files */,
 			);
 			path = MustachioTests;
@@ -196,6 +209,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD1E8FB919B3724200D6B695 /* Types.swift in Sources */,
+				AD1E8FBD19B3842800D6B695 /* Extensions.swift in Sources */,
+				AD1E8FBB19B3736D00D6B695 /* Mustache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +220,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD1E8F8219B36BDE00D6B695 /* MustachioTests.swift in Sources */,
+				AD1E8FC019B392AE00D6B695 /* Extensions.swift in Sources */,
+				AD1E8FBF19B3926600D6B695 /* ArrayExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
