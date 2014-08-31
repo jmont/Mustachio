@@ -6,13 +6,47 @@
 
 ### Variables
 
-- i.e. `{{name}}`
-- HTML escaped by default
-- Use `{{{name}}}` to unescape a variable
-- Use `&` to unescape a variable. i.e. `{{& name}}`
-- A variable miss returns an empty string
+- [x] i.e. `{{name}}`
+- [x] HTML escaped by default
+- [x] Use `{{{name}}}` to unescape a variable
+- [x] Use `&` to unescape a variable. i.e. `{{& name}}`
+- [ ] A variable miss returns an empty string
 
 ### Sections
 
-- Begin with `#` end with `/`.
-- i.e. `{{#person}} ... {{/person}}`
+- [ ] Begin with `#` end with `/`.
+- [ ] i.e. `{{#person}} ... {{/person}}`
+- [ ] If the variable is false it won't render the section.
+- [ ] If the variable is a list it will repeat section for list.
+- [ ] If the list is empty, it will not render the section.
+
+- If the object is a lambda(text, render), it will pass in the unrendered text and the render function.
+
+- Non-false values: 
+```
+Template:
+
+{{#person?}}
+  Hi {{name}}!
+{{/person?}}
+Hash:
+
+{
+  "person?": { "name": "Jon" }
+}
+Output:
+
+Hi Jon!
+```
+
+### Inverted sections
+- Use `^` as opposite of `#`.
+- Will render if variable is false or empty list
+
+### Comments
+{{ ! A comment }}
+
+### Partials
+- See man page
+
+### Set delimiter
