@@ -57,6 +57,26 @@ class MustachioTests: XCTestCase {
         XCTAssertEqual(result, "")
     }
 
+    func testSection() {
+        var result = Mustache.render("{{#aSection}} Text here {{/aSection}}", context: ["aSection" : ContextType.Dict(["name" : ContextType.Str("JC")])])
+        XCTAssertEqual(result, "Text here ")
+    }
+
+    func testNoSection() {
+        var result = Mustache.render("{{#aSection}} Text here {{/aSection}}", context: ["name" : ContextType.Str("JC")])
+        XCTAssertEqual(result, "")
+    }
+
+    func testInvertedSection() {
+        var result = Mustache.render("{{^aSection}} Text here {{/aSection}}", context: ["aSection" : ContextType.Dict(["name" : ContextType.Str("JC")])])
+        XCTAssertEqual(result, "")
+    }
+
+    func testInvertedNoSection() {
+        var result = Mustache.render("{{^aSection}} There was a problem {{/aSection}}", context: ["name" : ContextType.Str("JC")])
+        XCTAssertEqual(result, "There was a problem ")
+    }
+
 //    func testWhitespaceInNames() {
 //        var result = Mustache.render("Hello {{    name   }}", context: ["name" : ContextType.Str("JC")])
 //        XCTAssertEqual(result, "Hello JC")
