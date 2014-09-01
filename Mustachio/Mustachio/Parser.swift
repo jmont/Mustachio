@@ -14,10 +14,6 @@ public class Parser {
     }
 
     public class func parse(template: String) -> [Tag] {
-        return self.stringToTagStrings(template)
-    }
-
-    public class func stringToTagStrings(template: String) -> [Tag] {
         var scanner = NSScanner(string: template)
         var results = Array<Tag>()
         while !scanner.atEnd {
