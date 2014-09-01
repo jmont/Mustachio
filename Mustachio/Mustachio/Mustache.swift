@@ -26,9 +26,9 @@ public class Mustache {
         case .UnescapedVariable(let uname):
             return renderVariable(uname, context: context)
         case .Section(let sname, let contents):
-            return "unsupported"
+            return renderSection(sname, contents: contents, context: context)
         case .InvertedSection(let iname, let contents):
-            return "unsupported"
+            return renderInvertedSection(iname, contents: contents, context: context)
         }
     }
 
@@ -48,5 +48,50 @@ public class Mustache {
         }
         return result
 
+    }
+
+    class func renderSection(sectionName: String, contents: ContextType, context: [String : ContextType]) -> String {
+        var maybeSectionContext: ContextType? = context[sectionName]
+        if maybeSectionContext == nil {
+            return ""
+        }
+
+        var sectionContext: [String : ContextType] = Dictionary<String, ContextType>()
+        switch maybeSectionContext! {
+        case .Dict(let c):
+            sectionContext = c
+        default:
+            println("%@ - Unexpected content type - Should not happen")
+        }
+
+        var sectionContent: Array<Tag>?
+        switch contents {
+        case .List (let list):
+            sectionContent = list
+        default:
+            println("%@ - Unexpected content type - Should not happen")
+        }
+
+        var newContext = context
+        newContext += sectionContext
+
+        return sectionContent?.map(renderTag(newContext)).reduce("", +) ?? ""
+    }
+
+    class func renderInvertedSection(sectionName: String, contents: ContextType, context: [String : ContextType]) -> String {
+        var maybeSectionContext: ContextType? = context[sectionName]
+        if maybeSectionContext != nil {
+            return ""
+        }
+
+        var sectionContent: Array<Tag>?
+        switch contents {
+        case .List (let list):
+            sectionContent = list
+        default:
+            println("%@ - Unexpected content type - Should not happen")
+        }
+
+        return sectionContent?.map(renderTag(context)).reduce("", +) ?? ""
     }
 }
