@@ -36,6 +36,37 @@ extension String {
     }
 }
 
+// TODO: WHOA I do not know why this won't work for me.
+public func ==<T> (lhs: [T], rhs: [T]) -> Bool {
+    return lhs.count == rhs.count
+
+//    if lhs.count == rhs.count {
+//        return true
+//    }
+//
+//    for i in 0...lhs.count {
+//        if lhs[i] != rhs[i] {
+//            return false
+//        }
+//    }
+//    return true
+}
+
+public func ==<T, U> (lhs: [T : U], rhs: [T : U]) -> Bool {
+    return lhs.count == rhs.count
+
+//    if lhs.count == rhs.count {
+//        return true
+//    }
+//
+//    for i in 0...lhs.count {
+//        if lhs[i] != rhs[i] {
+//            return false
+//        }
+//    }
+//    return true
+}
+
 extension Array {
     func combine(separator: String) -> String{
         var str : String = ""
