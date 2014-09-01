@@ -51,4 +51,9 @@ class ParserTests: XCTestCase {
         var result = Parser.parse("Hello {{name    }}")
         XCTAssertEqual(result, [Tag.Str("Hello "), Tag.Variable("name")])
     }
+
+    func testSectionParserSimple() {
+        var result = Parser.parse("{{#section}}Some text{{/section}}")
+        XCTAssertEqual(result, [Tag.Section("section", ContextType.List([Tag.Str("Some text")]))])
+    }
 }
