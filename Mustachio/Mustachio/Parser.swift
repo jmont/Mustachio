@@ -9,60 +9,83 @@
 import Foundation
 
 public class Parser {
+    class func allowedChars() -> NSCharacterSet {
+        return NSCharacterSet(charactersInString: "{}").invertedSet
+    }
+
     public class func parse(template: String) -> [Tag] {
-        return self.toTags(template)
+        return self.stringToTagStrings(template)
     }
 
-    class func toTags(template: String) -> [Tag] {
-        var words = template.componentsSeparatedByString(" ")
-        return words.map(toTag)
-    }
+    public class func stringToTagStrings(template: String) -> [Tag] {
+        var scanner = NSScanner(string: template)
+        var results = Array<Tag>()
+        while !scanner.atEnd {
+            var parsedTag: Tag?
+            var didScan = self.scanUnescapedVariableName(scanner, resultTag: &parsedTag) ||
+                          self.scanAlternateUnescapedVariableName(scanner, resultTag: &parsedTag) ||
+                          self.scanVariableName(scanner, resultTag: &parsedTag) ||
+                          self.scanText(scanner, resultTag: &parsedTag)
 
-    class func toTag(s: String) -> Tag {
-        var maybeTag: Tag?
-        if s.hasPrefix("{{{") || s.hasPrefix("{{&") {
-            maybeTag = self.mkTagUnescapedVariable(s)
-        } else if s.hasPrefix("{{#") {
-            maybeTag = .Section("", "")
-        } else if s.hasPrefix("{{^") {
-            maybeTag = .InvertedSection("","")
-        } else if s.hasPrefix("{{") {
-            maybeTag = self.mkTagVariable(s)
+            if didScan && parsedTag != nil {
+                results.append(parsedTag!)
+            }
         }
-
-        return maybeTag ?? .Str(s)
+        return results
     }
 
-    class func mkTagVariable(s: String) -> Tag? {
-        if !s.hasPrefix("{{") || !s.hasSuffix("}}") {
-            return nil
-        }
+    class func scanText(scanner: NSScanner, inout resultTag: Tag?) -> Bool {
+        var text: NSString?
+        var didScan = scanner.scanCharactersFromSet(self.allowedChars(), intoString: &text)
 
-        var name = Array(s).dropWhile({(char: Character) -> Bool in char == "{" }).takeWhile({(char: Character) -> Bool in char != "}" })
-        return .Variable(String(seq: name).trimWhitespace())
+        if didScan && text != nil {
+            var str: String = text! as String!
+            resultTag = Tag.Str(str) // Don't trim whitespace!
+            return true
+        }
+        return false
     }
 
-    class func mkTagUnescapedVariable(s: String) -> Tag? {
-        let prefix = "{{{"
-        let suffix = "}}}"
-        if !s.hasPrefix(prefix) || !s.hasSuffix(suffix) {
-            // Try the alternate version (`{{& name }}`)
-            return self.mkTagAlternateUnescapedVariable(s)
-        }
 
-        var nameArray = Array(s).dropWhile({(char: Character) -> Bool in char == "{" }).takeWhile({(char: Character) -> Bool in char != "}" })
-        var name = String(seq: nameArray).trimWhitespace()
-        return .UnescapedVariable(name)
+    class func scanVariableName(scanner: NSScanner, inout resultTag: Tag?) -> Bool {
+        var name: NSString?
+        var didScan = scanner.scanString("{{", intoString: nil) &&
+            scanner.scanCharactersFromSet(self.allowedChars(), intoString: &name) &&
+            scanner.scanString("}}", intoString: nil)
+
+        if didScan && name != nil {
+            var str: String = name! as String!
+            resultTag = Tag.Variable(str.trimWhitespace())
+            return true
+        }
+        return false
     }
 
-    class func mkTagAlternateUnescapedVariable(s: String) -> Tag? {
-        let prefix = "{{&"
-        let suffix = "}}"
-        if !s.hasPrefix(prefix) || !s.hasSuffix(suffix) {
-            return nil
-        }
+    class func scanUnescapedVariableName(scanner: NSScanner, inout resultTag: Tag?) -> Bool {
+        var name: NSString?
+        var didScan = scanner.scanString("{{{", intoString: nil) &&
+            scanner.scanCharactersFromSet(self.allowedChars(), intoString: &name) &&
+            scanner.scanString("}}}", intoString: nil)
 
-        var name = Array(s).dropWhile({(char: Character) -> Bool in char == "{" || char == "&" }).takeWhile({(char: Character) -> Bool in char != "}" })
-        return .UnescapedVariable(String(seq: name).trimWhitespace())
+        if didScan && name != nil {
+            var str: String = name! as String!
+            resultTag = Tag.UnescapedVariable(str.trimWhitespace())
+            return true
+        }
+        return false
+    }
+
+    class func scanAlternateUnescapedVariableName(scanner: NSScanner, inout resultTag: Tag?) -> Bool {
+        var name: NSString?
+        var didScan = scanner.scanString("{{&", intoString: nil) &&
+            scanner.scanCharactersFromSet(self.allowedChars(), intoString: &name) &&
+            scanner.scanString("}}", intoString: nil)
+
+        if didScan && name != nil {
+            var str: String = name! as String!
+            resultTag = Tag.UnescapedVariable(str.trimWhitespace())
+            return true
+        }
+        return false
     }
 }
