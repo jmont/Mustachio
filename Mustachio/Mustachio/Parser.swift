@@ -43,7 +43,7 @@ public class Parser {
     }
 
 
-    class func scanVariableName(scanner: NSScanner, inout resultTag: Tag?) -> Bool {
+    class func scanVariable(scanner: NSScanner, inout resultTag: Tag?) -> Bool {
         var name: NSString?
         var didScan = scanner.scanString("{{", intoString: nil) &&
             scanner.scanCharactersFromSet(self.allowedChars(), intoString: &name) &&
@@ -57,7 +57,7 @@ public class Parser {
         return false
     }
 
-    class func scanUnescapedVariableName(scanner: NSScanner, inout resultTag: Tag?) -> Bool {
+    class func scanUnescapedVariable(scanner: NSScanner, inout resultTag: Tag?) -> Bool {
         var name: NSString?
         var didScan = scanner.scanString("{{{", intoString: nil) &&
             scanner.scanCharactersFromSet(self.allowedChars(), intoString: &name) &&
@@ -71,7 +71,7 @@ public class Parser {
         return false
     }
 
-    class func scanAlternateUnescapedVariableName(scanner: NSScanner, inout resultTag: Tag?) -> Bool {
+    class func scanAlternateUnescapedVariable(scanner: NSScanner, inout resultTag: Tag?) -> Bool {
         var name: NSString?
         var didScan = scanner.scanString("{{&", intoString: nil) &&
             scanner.scanCharactersFromSet(self.allowedChars(), intoString: &name) &&
