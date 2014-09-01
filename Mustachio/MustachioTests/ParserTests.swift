@@ -34,6 +34,21 @@ class ParserTests: XCTestCase {
 
     func testMultiplesParser() {
         var result = Parser.parse("Hello {{name}}")
-        XCTAssertEqual(result, [Tag.Str("Hello"), Tag.Variable("name")])
+        XCTAssertEqual(result, [Tag.Str("Hello "), Tag.Variable("name")])
+    }
+
+    func testAltUnescapedVarParserWithVarNameSpaces() {
+        var result = Parser.parse("Hello {{& name}}")
+        XCTAssertEqual(result, [Tag.Str("Hello "), Tag.UnescapedVariable("name")])
+    }
+
+    func testAltUnescapedVarParserWithCrazyVarNameSpaces() {
+        var result = Parser.parse("Hello {{& name    }}")
+        XCTAssertEqual(result, [Tag.Str("Hello "), Tag.UnescapedVariable("name")])
+    }
+
+    func testParserWithVarNameSpaces() {
+        var result = Parser.parse("Hello {{name    }}")
+        XCTAssertEqual(result, [Tag.Str("Hello "), Tag.Variable("name")])
     }
 }

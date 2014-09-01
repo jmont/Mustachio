@@ -32,10 +32,4 @@ class ArrayExtensionTests: XCTestCase {
         var result = "  all this whitespace     ".trimWhitespace()
         XCTAssertEqual(result, "all this whitespace")
     }
-
-//    func testTakeWhile() {
-//        var resultArray = Array("{{name}}").takeWhile({(char: Character) -> Bool in char != "}}" })
-//        var result = String(seq: resultArray)
-//        XCTAssertEqual(result, "{{name")
-//    }
 }
