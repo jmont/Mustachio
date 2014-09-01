@@ -14,13 +14,13 @@
 
 ### Sections
 
-- [ ] Begin with `#` end with `/`.
-- [ ] i.e. `{{#person}} ... {{/person}}`
-- [ ] If the variable is false it won't render the section.
+- [x] Begin with `#` end with `/`.
+- [x] i.e. `{{#person}} ... {{/person}}`
+- [x] If the variable is false it won't render the section.
 - [ ] If the variable is a list it will repeat section for list.
 - [ ] If the list is empty, it will not render the section.
 
-- If the object is a lambda(text, render), it will pass in the unrendered text and the render function.
+- [ ] If the object is a lambda(text, render), it will pass in the unrendered text and the render function.
 
 - Non-false values: 
 ```
