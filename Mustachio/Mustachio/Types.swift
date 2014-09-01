@@ -10,7 +10,7 @@ import Foundation
 
 public enum ContextType {
     case Str (String)
-    case Dict ([String : Tag])
+    case Dict ([String : ContextType])
     case List ([Tag])
     case True
     case False
@@ -38,7 +38,7 @@ public enum Tag : Equatable {
     case Variable (String)
     case UnescapedVariable (String)
     case Section (String, ContextType)
-    case InvertedSection (String, String)
+    case InvertedSection (String, ContextType)
 }
 
 public func == (lhs: Tag, rhs: Tag) -> Bool {

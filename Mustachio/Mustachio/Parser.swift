@@ -21,6 +21,7 @@ public class Parser {
             var didScan = self.scanUnescapedVariable(scanner, resultTag: &parsedTag) ||
                           self.scanAlternateUnescapedVariable(scanner, resultTag: &parsedTag) ||
                           self.scanSection(scanner, resultTag: &parsedTag) ||
+                          self.scanInvertedSection(scanner, resultTag: &parsedTag) ||
                           self.scanVariable(scanner, resultTag: &parsedTag) ||
                           self.scanText(scanner, resultTag: &parsedTag)
 
@@ -109,6 +110,34 @@ public class Parser {
         if didScan {
             var tempContents: ContextType = ContextType.List([Tag.Str(contents ?? "")])
             resultTag = Tag.Section(name.trimWhitespace(), tempContents)
+            return true
+        }
+        return false
+    }
+
+    class func scanInvertedSection(scanner: NSScanner, inout resultTag: Tag?) -> Bool {
+        var maybeName: NSString?
+        var didScanHead = scanner.scanString("{{^", intoString: nil) &&
+            scanner.scanCharactersFromSet(self.allowedChars(), intoString: &maybeName) &&
+            scanner.scanString("}}", intoString: nil)
+
+        if !didScanHead || maybeName == nil || maybeName!.length == 0 {
+            return false
+        }
+        var name: String = maybeName! as String!
+        var status = scanner.string
+
+        var contents: NSString?
+        scanner.scanCharactersFromSet(self.allowedChars(), intoString: &contents)
+
+        var didScanTail = scanner.scanString("{{/", intoString: nil) &&
+            scanner.scanString(name, intoString: nil) &&
+            scanner.scanString("}}", intoString: nil)
+
+        var didScan = didScanHead && didScanTail
+        if didScan {
+            var tempContents: ContextType = ContextType.List([Tag.Str(contents ?? "")])
+            resultTag = Tag.InvertedSection(name.trimWhitespace(), tempContents)
             return true
         }
         return false
